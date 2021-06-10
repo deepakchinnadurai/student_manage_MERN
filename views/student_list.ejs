@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>students_list</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="header1">Student List</h1>
+    <a href="/">Home</a>
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+               
+            </div>
+
+            <!-- form handling -->
+            <form action="/show-student" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                           <th>Id</th>
+                            <th>Name</th>
+                            <th>Roll</th>
+                            <th>Department</th>
+                            <th>Year of Joining</th>
+                            <th>Year of Completion</th>
+                            <th>Hostel Name</th>
+                            <th>Room</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i < users.length; i++) { %>
+                            <tr>
+                                <td><%= i + 1 %></td>
+                                <td><%= users[i].name %></td>
+                                <td><%= users[i].roll %></td>
+                                <td><%= users[i].department %></td>
+                                <td><%= users[i].yoj %></td>
+                                <td><%= users[i].yop %></td>
+                                <td><%= users[i].hostel %></td>
+                                <td><%= users[i].room %></td>
+                                <td>
+                                    <a href="/update-user?id=<%= users[i]._id%>" class="btn border-shadow update">
+                                        <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                        
+                                    </a>
+                                    <a  class="btn border-shadow delete" data-id=<%= users[i]._id%> >
+                                        <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</body>
+</html>

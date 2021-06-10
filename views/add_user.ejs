@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<title>home</title>
+<link rel = "stylesheet" href="style.css">
+ <body>
+     <h1 class = "header1">Add user</h1>
+     <div class = "container">
+         <a href="/">Home</a>
+     <form  action="/api/users" method="POST" id="add_user1">
+        <input type="hidden" name="id" value="">
+         <label>Name</label>
+         <input type="text" name="name" value=""/><br>
+         <label>Roll number</label>
+         <input type="text" name="roll" value=""/><br>
+         <label>Department</label>
+         <input type="text" name="department" value=""/><br>
+         <label>Year of joining</label>
+         <input type="text" name="yoj" value=""/><br>
+         <label>Year of passout</label>
+         <input type="text" name="yop" value=""/><br>
+         <label>Hostel Name</label>
+         <input type="text" name="hostel" value=""/><br>
+         <label>Room Number</label>
+         <input type="text" name="room" value=""/><br>
+         <button class = "btn1" type = "submit">Submit</button>
+     </form>
+     </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+ </body>
+</html>
